@@ -1,8 +1,8 @@
-# furnitureshop
+# Flutter Furniture Shop
 
-Turning inspiration to application
+This is a purely concept app, built inspired by this design:
 
-## Getting Started
+[<img src="https://assets.materialup.com/uploads/55654b55-7c61-4957-9c76-b7712eb29c04/preview.png">](https://www.uplabs.com/posts/furniture-shop-figma)
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
+
+
