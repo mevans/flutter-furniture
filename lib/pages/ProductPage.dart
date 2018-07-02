@@ -41,7 +41,7 @@ class ProductPage extends StatelessWidget {
                       alignment: Alignment.bottomRight,
                       child: Padding(
                         padding:
-                            const EdgeInsets.only(right: 16.0, bottom: 16.0),
+                            const EdgeInsets.only(right: 16.0, bottom: 50.0),
                         child: Icon(
                           Icons.favorite,
                           size: 30.0,
@@ -53,7 +53,7 @@ class ProductPage extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[

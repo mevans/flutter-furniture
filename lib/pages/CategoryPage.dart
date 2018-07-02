@@ -20,11 +20,12 @@ class CategoryPage extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.normal),
         ),
       ),
-      body: new Container(
+      body: Container(
+          color: Colors.white,
           child: ListView.builder(
-        itemBuilder: (ctx, index) => CategoryListItem(allProducts[index]),
-        itemCount: allProducts.length,
-      )),
+            itemBuilder: (ctx, index) => CategoryListItem(allProducts[index]),
+            itemCount: allProducts.length,
+          )),
     );
   }
 }
@@ -58,7 +59,7 @@ class CategoryListItem extends StatelessWidget {
                     children: <Widget>[
                       Text(product.name),
                       Text(
-                        "\$" + product.cost.toString(),
+                        "\$" + product.cost.toString().split(".")[0],
                         style: TextStyle(fontSize: 10.0),
                       ),
                     ],
