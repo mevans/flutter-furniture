@@ -1,4 +1,4 @@
-import 'package:furnitureshop/models/Category.dart';
+import 'package:furnitureshop/models/category.dart';
 
 class Product {
   final String imageUrl;
@@ -8,7 +8,8 @@ class Product {
   final Category category;
   final bool favourite;
   final int id;
-  Product(this.imageUrl, this.name, this.cost, this.description, this.category, this.favourite, this.id);
+  Product(this.imageUrl, this.name, this.cost, this.description, this.category,
+      this.favourite, this.id);
 
   @override
   String toString() {

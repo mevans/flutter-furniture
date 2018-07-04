@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:furnitureshop/CustomIcons.dart';
-import 'package:furnitureshop/models/Category.dart';
-import 'package:furnitureshop/models/Product.dart';
+import 'package:furnitureshop/custom_icons.dart';
+import 'package:furnitureshop/models/category.dart';
+import 'package:furnitureshop/models/product.dart';
 
 class Data {
   static List<Category> categories = [

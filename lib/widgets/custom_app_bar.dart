@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:furnitureshop/pages/ShoppingBasketPage.dart';
-import 'package:furnitureshop/widgets/CartIcon.dart';
+import 'package:furnitureshop/pages/shopping_basket_page.dart';
+import 'package:furnitureshop/widgets/cart_icon.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final preferredSize = new Size.fromHeight(164.0);
@@ -31,7 +31,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   InkWell(
                     borderRadius: BorderRadius.circular(48.0),
-                    onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => ShoppingBasketPage())),
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (ctx) => ShoppingBasketPage())),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: CartIcon(),
@@ -41,7 +42,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 16.0, top: 10.0, right: 16.0, bottom: 12.0),
+              margin: EdgeInsets.only(
+                  left: 16.0, top: 10.0, right: 16.0, bottom: 12.0),
               child: TextField(
                 decoration: InputDecoration(
                   prefixIcon: Padding(
@@ -51,7 +53,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   fillColor: Colors.white,
                   filled: true,
                   hintText: "What are you looking for ?",
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0), borderSide: BorderSide(width: 10.0, color: Colors.white)),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                      borderSide: BorderSide(width: 10.0, color: Colors.white)),
                 ),
               ),
             )

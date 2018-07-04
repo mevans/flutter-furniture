@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:furnitureshop/models/Product.dart';
-import 'package:furnitureshop/pages/Main.dart';
-import 'package:furnitureshop/pages/ProductPage.dart';
+import 'package:furnitureshop/models/product.dart';
+import 'package:furnitureshop/pages/main_page.dart';
+import 'package:furnitureshop/pages/product_page.dart';
 
 class ShoppingBasketListItem extends StatefulWidget {
   final Product product;

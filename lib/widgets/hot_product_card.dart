@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:furnitureshop/models/Product.dart';
-import 'package:furnitureshop/pages/ProductPage.dart';
+import 'package:furnitureshop/models/product.dart';
+import 'package:furnitureshop/pages/product_page.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;

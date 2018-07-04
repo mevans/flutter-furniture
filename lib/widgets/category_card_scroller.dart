@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:furnitureshop/Data.dart';
-import 'package:furnitureshop/widgets/CategoryCard.dart';
+import 'package:furnitureshop/data.dart';
+import 'package:furnitureshop/widgets/category_card.dart';
 
 class CategoryCardScroller extends StatelessWidget {
   @override

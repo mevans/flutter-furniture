@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:furnitureshop/pages/Main.dart';
+import 'package:furnitureshop/pages/main_page.dart';
 
 class CartIcon extends StatefulWidget {
   @override
@@ -18,7 +18,9 @@ class CartIconState extends State<CartIcon> {
           Icons.shopping_basket,
           color: Colors.white,
         ),
-        (MyApp.shoppingBasket.itemsAndQuantities.length != 0 ? NumberInRedCircle(MyApp.shoppingBasket.totalItems) : Container())
+        (MyApp.shoppingBasket.itemsAndQuantities.length != 0
+            ? NumberInRedCircle(MyApp.shoppingBasket.totalItems)
+            : Container())
       ],
     );
   }
@@ -33,7 +35,8 @@ class NumberInRedCircle extends StatelessWidget {
     return Container(
       width: 12.0,
       height: 12.0,
-      decoration: BoxDecoration(color: Colors.redAccent, shape: BoxShape.circle),
+      decoration:
+          BoxDecoration(color: Colors.redAccent, shape: BoxShape.circle),
       child: Center(
         child: Text(
           number < 10 ? number.toString() : "9+",
