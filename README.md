@@ -8,4 +8,4 @@ This is a purely concept app, built inspired by this design:
 
 ## Final Product  
 
-<img src="https://raw.githubusercontent.com/mevans/flutter-furniture/master/media/preview.jpg">
+<img src="https://raw.githubusercontent.com/mevans/flutter-furniture/master/media/my-app.jpg">
