@@ -18,9 +18,7 @@ class CartIconState extends State<CartIcon> {
           Icons.shopping_basket,
           color: Colors.white,
         ),
-        (MyApp.shoppingBasket.itemsAndQuantities.length != 0
-            ? NumberInRedCircle(MyApp.shoppingBasket.totalItems)
-            : Container())
+        NumberInRedCircle(MyApp.shoppingBasket.totalItems)
       ],
     );
   }

@@ -3,9 +3,24 @@ import 'package:furnitureshop/models/product.dart';
 
 import 'main_page.dart';
 
-class ProductPage extends StatelessWidget {
+class ProductPage extends StatefulWidget {
   final Product product;
   ProductPage(this.product);
+
+  @override
+  ProductPageState createState() {
+    return new ProductPageState();
+  }
+}
+
+class ProductPageState extends State<ProductPage> {
+  void toggle() {
+    setState(() {
+      MyApp.wishList.products.contains(widget.product)
+          ? MyApp.wishList.products.remove(widget.product)
+          : MyApp.wishList.products.add(widget.product);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +36,9 @@ class ProductPage extends StatelessWidget {
               child: Stack(
                 children: <Widget>[
                   Hero(
-                    tag: "product_${product.toString()}",
+                    tag: "product_${widget.product.toString()}",
                     child: Image.network(
-                      product.imageUrl,
+                      widget.product.imageUrl,
                       height: 400.0,
                       width: double.infinity,
                       fit: BoxFit.cover,
@@ -43,10 +58,16 @@ class ProductPage extends StatelessWidget {
                       child: Padding(
                         padding:
                             const EdgeInsets.only(right: 16.0, bottom: 50.0),
-                        child: Icon(
-                          Icons.favorite,
-                          size: 30.0,
-                          color: Colors.white,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.favorite,
+                            size: 30.0,
+                          ),
+                          color:
+                              MyApp.wishList.products.contains(widget.product)
+                                  ? Colors.redAccent
+                                  : Colors.white,
+                          onPressed: () => toggle(),
                         ),
                       )),
                 ],
@@ -59,13 +80,15 @@ class ProductPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      product.name,
+                      widget.product.name,
                       style: TextStyle(fontSize: 20.0),
                     ),
                     Text(
-                      "\$" + product.cost.toString().split(".")[0],
-                      style:
-                          TextStyle(color: Color(0xff8E8EF6), fontSize: 16.0),
+                      "\$" + widget.product.cost.toString().split(".")[0],
+                      style: TextStyle(
+                          color: Color(0xff8E8EF6),
+                          fontSize: 19.0,
+                          fontWeight: FontWeight.w500),
                     ),
                     Center(
                       child: Container(
@@ -75,7 +98,7 @@ class ProductPage extends StatelessWidget {
                         color: Color(0xffDEDEDE),
                       ),
                     ),
-                    Text(product.description),
+                    Text(widget.product.description),
                   ],
                 ),
               ),
@@ -83,10 +106,10 @@ class ProductPage extends StatelessWidget {
             FlatButton(
               color: Theme.of(context).primaryColor,
               onPressed: () {
-                MyApp.shoppingBasket.addProductToBasket(product.id, 1);
+                MyApp.shoppingBasket.addProductToBasket(widget.product.id, 1);
                 key.currentState.showSnackBar(new SnackBar(
-                  content:
-                      new Text("${product.name} has been added to your basket"),
+                  content: new Text(
+                      "${widget.product.name} has been added to your basket"),
                 ));
               },
               padding: EdgeInsets.symmetric(vertical: 32.0),

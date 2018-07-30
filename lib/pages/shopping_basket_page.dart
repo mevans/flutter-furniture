@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:furnitureshop/data.dart';
 import 'package:furnitureshop/pages/main_page.dart';
+import 'package:furnitureshop/pages/wishlist_page.dart';
 import 'package:furnitureshop/widgets/shopping_basket_list_item.dart';
 
 class ShoppingBasketPage extends StatefulWidget {
@@ -28,6 +29,12 @@ class ShoppingBasketPageState extends State<ShoppingBasketPage> {
           centerTitle: true,
           backgroundColor: Theme.of(context).primaryColor,
           actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.favorite),
+              onPressed: () => Navigator
+                  .of(context)
+                  .push(MaterialPageRoute(builder: (ctx) => WishListPage())),
+            ),
             IconButton(
               icon: Icon(Icons.clear),
               onPressed: () => clearShoppingBasket(),
