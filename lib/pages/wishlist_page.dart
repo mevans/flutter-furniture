@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:furnitureshop/models/product.dart';
 import 'package:furnitureshop/pages/main_page.dart';
 
 class WishListPage extends StatelessWidget {
@@ -10,7 +12,12 @@ class WishListPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: MyApp.wishList.products.length != 0
-          ? Text("Stuff")
+          ? ListView.builder(
+              itemBuilder: (ctx, index) => Container(
+                    child: WishListListItem(MyApp.wishList.products[index]),
+                  ),
+              itemCount: MyApp.wishList.products.length,
+            )
           : Center(
               child: Center(
               child: Column(
@@ -32,6 +39,25 @@ class WishListPage extends StatelessWidget {
                 ],
               ),
             )),
+    );
+  }
+}
+
+class WishListListItem extends StatelessWidget {
+  final Product product;
+  WishListListItem(this.product);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        CachedNetworkImage(
+          imageUrl: product.imageUrl,
+          width: 100.0,
+          height: 100.0,
+          fit: BoxFit.cover,
+        ),
+      ],
     );
   }
 }

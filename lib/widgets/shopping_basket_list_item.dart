@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:furnitureshop/models/product.dart';
 import 'package:furnitureshop/pages/main_page.dart';
@@ -33,8 +34,8 @@ class ShoppingBasketListItemState extends State<ShoppingBasketListItem> {
           Row(
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              Image.network(
-                widget.product.imageUrl,
+              CachedNetworkImage(
+                imageUrl: widget.product.imageUrl,
                 width: 100.0,
                 height: 100.0,
                 fit: BoxFit.cover,

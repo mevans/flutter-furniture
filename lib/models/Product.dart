@@ -6,13 +6,12 @@ class Product {
   final double cost;
   final String description;
   final Category category;
-  final bool favourite;
   final int id;
   Product(this.imageUrl, this.name, this.cost, this.description, this.category,
-      this.favourite, this.id);
+      this.id);
 
   @override
   String toString() {
-    return 'Product{imageUrl: $imageUrl, name: $name, cost: $cost, description: $description, category: $category, favourite: $favourite, id: $id}';
+    return 'Product{imageUrl: $imageUrl, name: $name, cost: $cost, description: $description, category: $category, id: $id}';
   }
 }

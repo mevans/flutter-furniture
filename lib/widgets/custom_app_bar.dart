@@ -51,7 +51,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               margin: EdgeInsets.only(
                   left: 16.0, top: 10.0, right: 16.0, bottom: 12.0),
               child: TextField(
-                textInputAction: TextInputAction.send,
                 onChanged: (s) => onTextChanged(s),
                 decoration: InputDecoration(
                   prefixIcon: Padding(

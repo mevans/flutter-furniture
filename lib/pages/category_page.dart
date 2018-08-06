@@ -3,7 +3,7 @@ import 'package:furnitureshop/data.dart';
 import 'package:furnitureshop/models/category.dart';
 import 'package:furnitureshop/models/category_filter.dart';
 import 'package:furnitureshop/models/product.dart';
-import 'package:furnitureshop/pages/product_page.dart';
+import 'package:furnitureshop/widgets/product_list_item.dart';
 
 class CategoryPage extends StatefulWidget {
   final Category category;
@@ -183,7 +183,7 @@ class CategoryPageState extends State<CategoryPage> {
           child: allProducts.length != 0
               ? ListView.builder(
                   itemBuilder: (ctx, index) =>
-                      CategoryListItem(allProducts[index]),
+                      ProductListItem(allProducts[index]),
                   itemCount: allProducts.length,
                 )
               : Center(
@@ -191,54 +191,6 @@ class CategoryPageState extends State<CategoryPage> {
                   "No products match this criteria",
                   style: TextStyle(color: Colors.grey),
                 ))),
-    );
-  }
-}
-
-class CategoryListItem extends StatelessWidget {
-  final Product product;
-
-  CategoryListItem(this.product);
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => Navigator
-          .of(context)
-          .push(MaterialPageRoute(builder: (ctx) => ProductPage(product))),
-      child: Column(
-        children: <Widget>[
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[
-              Image.network(
-                product.imageUrl,
-                width: 100.0,
-                height: 100.0,
-                fit: BoxFit.cover,
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(product.name),
-                      Text(
-                        "\$" + product.cost.toString().split(".")[0],
-                        style: TextStyle(fontSize: 10.0),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Divider(
-            height: 0.0,
-          )
-        ],
-      ),
     );
   }
 }

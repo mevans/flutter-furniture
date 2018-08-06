@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:furnitureshop/models/product.dart';
 import 'package:furnitureshop/pages/main_page.dart';
@@ -27,8 +28,8 @@ class ProductCardState extends State<ProductCard> {
           children: <Widget>[
             Hero(
               tag: "product_${widget.product.toString()}",
-              child: Image.network(
-                widget.product.imageUrl,
+              child: CachedNetworkImage(
+                imageUrl: widget.product.imageUrl,
                 fit: BoxFit.cover,
                 height: double.infinity,
                 width: double.infinity,
